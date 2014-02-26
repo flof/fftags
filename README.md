@@ -14,6 +14,6 @@ Usage
     <dependency>
         <groupId>net.sourcecoder</groupId>
         <artifactId>fftags</artifactId>
-        <version>1.0.13.RELEASE</version>
+        <version>1.1.0.RELEASE</version>
     </dependency>
 ```
