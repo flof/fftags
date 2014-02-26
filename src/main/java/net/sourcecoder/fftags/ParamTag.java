@@ -1,4 +1,4 @@
-package net.ffxml.fftags;
+package net.sourcecoder.fftags;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package net.ffxml.fftags;
+package net.sourcecoder.fftags;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import net.ffxml.fftags.ParamMapFactory.ParamType;
+import net.sourcecoder.fftags.ParamMapFactory.ParamType;
 
 public class ParamMap {
 

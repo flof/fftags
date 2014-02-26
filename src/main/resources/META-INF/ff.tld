@@ -6,14 +6,14 @@
 	<description>Florian Fankhausers Tag Lib</description>
 	<tlib-version>1.0</tlib-version>
 	<short-name>ff</short-name>
-	<uri>http://ffxml.net/fftags</uri>
+	<uri>https://github.com/flof/fftags</uri>
 
 	<tag>
 		<description>
 			URL Tag
 		</description>
 		<name>url</name>
-		<tag-class>net.ffxml.fftags.UrlTag</tag-class>
+		<tag-class>net.sourcecoder.fftags.UrlTag</tag-class>
 		<body-content>scriptless</body-content>
 		<attribute>
 			<description>
@@ -59,7 +59,7 @@
 			Param Tag
 		</description>
 		<name>param</name>
-		<tag-class>net.ffxml.fftags.ParamTag</tag-class>
+		<tag-class>net.sourcecoder.fftags.ParamTag</tag-class>
 		<body-content>empty</body-content>
 		<attribute>
 			<description>
