@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
 	version="2.0">
 
-	<description>A JSP-Taglib supporting RESTful web applications</description>
+	<description>A JSP Taglib for stateless web applications</description>
 	<display-name>fftags</display-name>
 	<tlib-version>1.0</tlib-version>
 	<short-name>fftags</short-name>
