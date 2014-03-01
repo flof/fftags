@@ -18,8 +18,8 @@ Installation
     </dependency>
 ```
 
-Usage
------
+Introduction
+------------
 
 In web applications using the RESTful architectural style, one key constraint is statelessness. That means that the current state of the application is not stored on the server for each user (in the user-session) but is completely contained in the current URL of the web browser of the user.
 
@@ -62,3 +62,9 @@ But why? What's the advantage?
 So what's **fftags** for?
 
 When you make a web application in the style described above, you have to add the whole application state in each in every Link (and form action) you have on your pages (with some exceptions). And that can be a lot.
+
+TBD
+
+Usage
+-----
+TBD
