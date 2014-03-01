@@ -21,7 +21,7 @@ Installation
 Introduction
 ------------
 
-In web applications using the RESTful architectural style, one key constraint is statelessness. That means that the current state of the application is not stored on the server for each user (in the user-session) but is completely contained in the current URL of the web browser of the user.
+In web applications using the RESTful architectural style, one key constraint is statelessness. This means that the current state of the application is not stored on the server for each user (in the user-session) but is completely contained in the current URL of the web browser of the user.
 
 But what is the application state?
 
@@ -29,11 +29,12 @@ Let's use an example. Consider a knowledge base application for storing and retr
 
  - an ID
  - a subject 
+ - a body
  - a category
  - a creation date
  - a last-modified-date
 
-We are focusing on the retrieval part of the application. Users can enter a  search term into a textfield to search for entries. The result is listed in a table with a column for each field. In each column header are two links for sorting the result by this column in ascending or descending order. Then there are navigation links where the user can go to the next or previous page. In this example, the application state contains the following information:
+We are focusing on the retrieval part of the application. Users can enter a  search term into a textfield to search for entries. The result is listed in a table with columns for each field. In each column header are two links for sorting the result by this column in ascending or descending order. Then there are navigation links for going to the next or previous page. In this example, the application state contains the following information:
 
  - The search term
  - The current page number
@@ -51,7 +52,7 @@ The URL might look like this:
 
 `http://example.com/kb?q=mysearchterm&page=1&sort_col=creation_date&sort_dir=desc`
 
-When this URL is opened in a web browser, the server receives all the information necessary to render the resulting page. The server can use the Parameter "q" in the SQL-Statement to filter the result by the search term. The server can also use the Parameters "sort_col" and "sort_dir" in the SQL-Statement to sort the result accordingly. And finally the server can extract the right number of entries from the search result by using the Parameter "page". The server does not depend on any prior knowledge associated with the current users session. All the information necessary is provided by the URL.
+When this URL is opened in a web browser, the server receives all the information necessary to render the resulting page. The server can use the Parameter "q" in the SQL-Statement to filter the result by the search term. The server can also use the Parameters "sort_col" and "sort_dir" in the SQL-Statement to sort the result accordingly. And finally the server can extract the right number of entries from the search result by using the Parameter "page". The server does not depend on any prior knowledge associated with the current user session. All the information necessary is provided within the URL.
 
 But why? What's the advantage?
 
