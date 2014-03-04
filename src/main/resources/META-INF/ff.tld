@@ -3,9 +3,10 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
 	version="2.0">
 
-	<description>Florian Fankhausers Tag Lib</description>
+	<description>A JSP Taglib for stateless web applications</description>
+	<display-name>fftags</display-name>
 	<tlib-version>1.0</tlib-version>
-	<short-name>ff</short-name>
+	<short-name>fftags</short-name>
 	<uri>https://github.com/flof/fftags</uri>
 
 	<tag>
@@ -79,7 +80,9 @@
 		</attribute>
 		<attribute>
 			<description>
-				Removes parameter. One Wildcard (*) at the end is supported.
+				Removes parameter with given name.
+				If the given name ends with *, then all parameters beginning
+				with the given name are removed.
 			</description>
 			<name>clear</name>
 			<required>false</required>
