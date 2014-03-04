@@ -31,7 +31,16 @@ public class ParamMapFactory {
 		public T extractValueFromRequest(Map requestParamMap) {
 			if (requestParamMap.containsKey(name)) {
 				String[] valueArr = (String[]) requestParamMap.get(name);
-				return convertFromString((String) valueArr[0]);
+				T result = null;
+				try {
+					result = convertFromString((String) valueArr[0]);
+				} catch (Exception e) {
+				}
+				if (result != null) {
+					return result;
+				} else {
+					return getDefaultValue();
+				}
 			} else {
 				return getDefaultValue();
 			}
@@ -73,7 +82,7 @@ public class ParamMapFactory {
 			return String.valueOf((Integer) value);
 		}
 	}
-	
+
 	class LongParamType extends ParamType<Long> {
 		public LongParamType(String name, long defaultValue) {
 			super(name, defaultValue);
@@ -111,8 +120,7 @@ public class ParamMapFactory {
 			if (requestParamMap.containsKey(name)) {
 				String[] valueArr = (String[]) requestParamMap.get(name);
 				return convertFromString((String) valueArr[0]);
-			} else if (requestParamMap
-					.containsKey(getCheckboxDetectionFieldName())) {
+			} else if (requestParamMap.containsKey(getCheckboxDetectionFieldName())) {
 				return false;
 			} else {
 				return getDefaultValue();
@@ -159,7 +167,7 @@ public class ParamMapFactory {
 	public void addIntParam(String name, int defaultValue) {
 		addParam(name, new IntParamType(name, defaultValue));
 	}
-	
+
 	public void addLongParam(String name, long defaultValue) {
 		addParam(name, new LongParamType(name, defaultValue));
 	}
@@ -185,8 +193,8 @@ public class ParamMapFactory {
 	 * Ein zusätzliches hidden-Field mit dem Namen des Parameters mit
 	 * vorangestelltem "_". Dies dient zur Checkbox erkennung, da eine Checkbox
 	 * nichts zurückliefert, wenn diese nicht angehakt ist. Das Vorhandensein des
-	 * hidden-Fields signalisiert dem Server, dass die Checkbox sichtbar war,
-	 * aber nicht angehakt wurde.
+	 * hidden-Fields signalisiert dem Server, dass die Checkbox sichtbar war, aber
+	 * nicht angehakt wurde.
 	 * 
 	 * <pre>
 	 * 	&lt;input type="hidden" name="_boolParam" /&gt;
@@ -217,7 +225,7 @@ public class ParamMapFactory {
 	private void addParam(String name, ParamType<?> paramType) {
 		if (paramTypeMap.containsKey(name)) {
 			throw new RuntimeException("A parameter with the name " + name
-					+ " already exists.");
+			    + " already exists.");
 		}
 		paramTypeMap.put(name, paramType);
 	}
@@ -237,6 +245,6 @@ public class ParamMapFactory {
 	public boolean isDefaultValue(String name, String stringValue) {
 		ParamType<?> paramType = paramTypeMap.get(name);
 		return stringValue.equals(paramType.convertToString(paramType
-				.getDefaultValue()));
+		    .getDefaultValue()));
 	}
 }
