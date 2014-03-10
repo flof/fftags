@@ -14,7 +14,7 @@ Installation
     <dependency>
         <groupId>net.sourcecoder</groupId>
         <artifactId>fftags</artifactId>
-        <version>1.1.0.RELEASE</version>
+        <version>1.1.1.RELEASE</version>
     </dependency>
 ```
 
